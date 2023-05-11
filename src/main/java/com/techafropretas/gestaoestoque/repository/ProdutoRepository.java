@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.techafropretas.gestaoestoque.model.Produto;
 
 @Repository
-public interface ProdutoRepository {
-
-	public interface NotafiscalRepository extends JpaRepository <Produto, Integer> {
+public interface ProdutoRepository extends JpaRepository <Produto, Integer> { 
 		
 		// listar todos os produtos
 		List <Produto> findAll();
@@ -23,5 +21,5 @@ public interface ProdutoRepository {
 		
 		//cadastrar/alterar produto
 		<LojaMod extends Produto> LojaMod save(LojaMod produto);
-	}
+	
 }
