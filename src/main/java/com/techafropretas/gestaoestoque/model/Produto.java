@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -42,11 +43,12 @@ public class Produto {
 	private String validade;
 	
 	@ManyToOne
+	@JoinColumn(name="LojaIdLoja")
 	public Loja loja;
 	
 	@ManyToOne
+	@JoinColumn(name="NotafiscalNf")
 	public Notafiscal notafiscal;
-
 
 	/*Contrutor vazio*/
 	public Produto() {
@@ -159,6 +161,14 @@ public class Produto {
 
 	public void setValidade(String validade) {
 		this.validade = validade;
+	}
+
+	public Notafiscal getNotafiscal() {
+		return notafiscal;
+	}
+
+	public void setNotafiscal(Notafiscal notafiscal) {
+		this.notafiscal = notafiscal;
 	}	
 
 }

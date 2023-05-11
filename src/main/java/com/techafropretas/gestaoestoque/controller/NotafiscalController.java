@@ -28,8 +28,8 @@ public class NotafiscalController {
 		}
 
 		//cadastrar loja
-		@RequestMapping(value="/loja", method=RequestMethod.POST)
-		public @ResponseBody Notafiscal cadastrarLoja(@RequestBody Notafiscal notafiscal) {
+		@RequestMapping(value="/put", method=RequestMethod.POST)
+		public @ResponseBody Notafiscal cadastrarNota(@RequestBody Notafiscal notafiscal) {
 			return notafiscalRepository.save(notafiscal);
 		}
 }

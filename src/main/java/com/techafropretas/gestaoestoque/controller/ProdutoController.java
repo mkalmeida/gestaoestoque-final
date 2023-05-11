@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techafropretas.gestaoestoque.model.Loja;
 import com.techafropretas.gestaoestoque.model.Produto;
-import com.techafropretas.gestaoestoque.repository.LojaRepository;
 import com.techafropretas.gestaoestoque.repository.ProdutoRepository;
 
 @RestController
@@ -30,7 +28,7 @@ public class ProdutoController {
 
 	//cadastrar loja
 	@RequestMapping(value="/post", method=RequestMethod.POST)
-	public @ResponseBody Produto cadastrarLoja(@RequestBody Produto produto) {
+	public @ResponseBody Produto cadastrarProduto(@RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 }
