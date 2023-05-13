@@ -1,6 +1,7 @@
 package com.techafropretas.gestaoestoque.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -24,5 +25,9 @@ public interface LojaRepository extends JpaRepository <Loja, Integer> {
 
 	//cadastrar/alterar produto
 	Loja save(String nome);
+	
+	//encontrar o usuario por email
+	Optional<Loja> findUserByEmail(String email);
+
 
 }

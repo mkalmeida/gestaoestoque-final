@@ -1,6 +1,7 @@
 package com.techafropretas.gestaoestoque.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,16 +16,34 @@ public class Produto {
 	@Id
 	@SequenceGenerator(name = "produto_sequence", sequenceName = "produto_sequence", allocationSize=1)
 	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "produto_sequence")
+	@Column (name="idProduto")
 	private int idProduto;
-	private int idLoja;
+	
+	@Column (name="nomeProduto")
 	private String nomeProduto;
+	
+	@Column (name="ean")
 	private int ean;
+	
+	@Column (name="lote")
 	private String lote;
+	
+	@Column (name="caixaria")
 	private int caixaria;
+	
+	@Column (name="quantidade")
 	private int quantidade;
+	
+	@Column (name="valorTotalProd")
 	private float valorTotalProd;
+	
+	@Column (name="valorUnitario")
 	private float valorUnitario;
+	
+	@Column (name="validade")
 	private String validade;
+	
+	@Column (name="nf")
 	private int nf;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -112,14 +131,6 @@ public class Produto {
 
 	public void setValidade(String validade) {
 		this.validade = validade;
-	}
-
-	public int getIdLoja() {
-		return idLoja;
-	}
-
-	public void setIdLoja(int idLoja) {
-		this.idLoja = idLoja;
 	}
 
 	public int getNf() {

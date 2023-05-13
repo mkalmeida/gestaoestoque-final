@@ -27,8 +27,6 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
-
-	
 	//inicio
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public @ResponseBody List<Produto> listar() {

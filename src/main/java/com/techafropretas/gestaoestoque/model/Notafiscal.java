@@ -4,6 +4,7 @@ package com.techafropretas.gestaoestoque.model;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -15,13 +16,20 @@ import jakarta.persistence.Table;
 public class Notafiscal {
 	
 	@Id
+	@Column (name="nf")
 	private int nf;
 	
+	@Column (name="idLoja")
 	private int idLoja;
+	
+	@Column (name="fornecedor")
 	private String fornecedor;
+	
+	@Column (name="dataNF")
 	private String dataNF;
+	
+	@Column (name="valorTotalNF")
 	private float valorTotalNF;
-	private int idProduto;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Produto> produto;
@@ -66,14 +74,6 @@ public class Notafiscal {
 		this.valorTotalNF = valorTotalNF;
 	}
 
-
-	public int getIdProduto() {
-		return idProduto;
-	}
-
-	public void setIdProduto(int idProduto) {
-		this.idProduto = idProduto;
-	}
 
 	public int getNf() {
 		return nf;
