@@ -21,4 +21,8 @@ public interface LojaRepository extends JpaRepository <Loja, Integer> {
 	
 	//cadastrar/alterar produto
 	<LojaMod extends Loja> LojaMod save(LojaMod loja);
+
+	//cadastrar/alterar produto
+	Loja save(String nome);
+
 }

@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.techafropretas.gestaoestoque.model.Notafiscal;
 import com.techafropretas.gestaoestoque.repository.NotafiscalRepository;
 
 
 @RestController
-@RequestMapping("/nota")
+@RequestMapping("/notafiscal")
 public class NotafiscalController {
 
 	//Acoes
@@ -27,10 +26,11 @@ public class NotafiscalController {
 			return notafiscalRepository.findAll();
 		}
 
-		//cadastrar loja
-		@RequestMapping(value="/put", method=RequestMethod.POST)
+		//cadastrar nota
+		@RequestMapping(value="/inserenota", method=RequestMethod.POST)
 		public @ResponseBody Notafiscal cadastrarNota(@RequestBody Notafiscal notafiscal) {
 			return notafiscalRepository.save(notafiscal);
 		}
+		
 }
 

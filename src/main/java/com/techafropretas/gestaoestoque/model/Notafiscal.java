@@ -1,11 +1,12 @@
 package com.techafropretas.gestaoestoque.model;
 
+
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -14,35 +15,31 @@ import jakarta.persistence.Table;
 public class Notafiscal {
 	
 	@Id
-	@Column (name="nf")
 	private int nf;
 	
-	@Column (name="fornecedor")
+	private int idLoja;
 	private String fornecedor;
-	
-	@Column (name="dataNF")
 	private String dataNF;
-	
-	@Column (name="valorTotalNF")
 	private float valorTotalNF;
+	private int idProduto;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Produto> produto;
 	
-	@OneToMany(mappedBy = "nomeProduto", cascade = CascadeType.ALL)
-	private List <Produto> produto;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Loja loja;
 	
-	public List<Produto> getProduto() {
-		return produto;
+
+	public void setLoja(Loja loja) {
+		this.loja = loja;
 	}
 
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-
-	public int getNf() {
-		return nf;
-	}
-
-	public void setNf(int nf) {
-		this.nf = nf;
+	
+	public List<Produto> getProduto() {
+		return produto;
 	}
 
 	public String getFornecedor() {
@@ -68,6 +65,35 @@ public class Notafiscal {
 	public void setValorTotalNF(float valorTotalNF) {
 		this.valorTotalNF = valorTotalNF;
 	}
+
+
+	public int getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(int idProduto) {
+		this.idProduto = idProduto;
+	}
+
+	public int getNf() {
+		return nf;
+	}
+
+	public void setNf(int nf) {
+		this.nf = nf;
+	}
+
+	public int getIdLoja() {
+		return idLoja;
+	}
+
+	public void setIdLoja(int idLoja) {
+		this.idLoja = idLoja;
+	}
+
+
+
+
 	
 	
 }

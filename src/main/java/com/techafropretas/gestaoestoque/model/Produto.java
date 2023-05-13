@@ -1,94 +1,46 @@
 package com.techafropretas.gestaoestoque.model;
 
-
-import jakarta.persistence.Column;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Produto")
 public class Produto {
-	
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@SequenceGenerator(name = "produto_sequence", sequenceName = "produto_sequence", allocationSize=1)
+	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "produto_sequence")
 	private int idProduto;
-	
-	@Column (name="nomeProduto")
+	private int idLoja;
 	private String nomeProduto;
-	
-	@Column (name="ean")
 	private int ean;
-	
-	@Column (name="lote")
 	private String lote;
-	
-	@Column (name="caixaria")
 	private int caixaria;
-	
-	@Column (name="quantidade")
 	private int quantidade;
-	
-	@Column (name="valorTotalProd")
 	private float valorTotalProd;
-	
-	@Column (name="valorUnitario")
 	private float valorUnitario;
-	
-	@Column (name="validade")
 	private String validade;
+	private int nf;
 	
-	@ManyToOne
-	@JoinColumn(name="LojaIdLoja")
-	public Loja loja;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Notafiscal notafiscal;
 	
-	@ManyToOne
-	@JoinColumn(name="NotafiscalNf")
-	public Notafiscal notafiscal;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Loja loja;
 
-	/*Contrutor vazio*/
-	public Produto() {
-	}
 	
-	/*Contrutor sem o atributo ID*/
-	public Produto(String nomeProduto, int ean, String lote, int caixaria, int quantidade,
-			float valorTotalProd, float valorUnitario, String validade) {
-		this.nomeProduto = nomeProduto;
-		this.ean = ean;
-		this.lote = lote;
-		this.caixaria = caixaria;
-		this.quantidade = quantidade;
-		this.valorTotalProd = valorTotalProd;
-		this.valorUnitario = valorUnitario;
-		this.validade = validade;
-	}
-
-	/*Contrutor com todos os atributos*/
-	public Produto(int idProduto, String nomeProduto, int ean, String lote, int caixaria, int quantidade,
-			float valorTotalProd, float valorUnitario, String validade) {
-		this.idProduto = idProduto;
-		this.nomeProduto = nomeProduto;
-		this.ean = ean;
-		this.lote = lote;
-		this.caixaria = caixaria;
-		this.quantidade = quantidade;
-		this.valorTotalProd = valorTotalProd;
-		this.valorUnitario = valorUnitario;
-		this.validade = validade;
-	}
-
-	public Loja getLoja() {
-		return loja;
-	}
-
 	public void setLoja(Loja loja) {
 		this.loja = loja;
 	}
 
+	public void setNotafiscal(Notafiscal notafiscal) {
+		this.notafiscal = notafiscal;
+	}
 
 	public int getIdProduto() {
 		return idProduto;
@@ -97,7 +49,6 @@ public class Produto {
 	public void setIdProduto(int idProduto) {
 		this.idProduto = idProduto;
 	}
-
 
 	public String getNomeProduto() {
 		return nomeProduto;
@@ -163,12 +114,22 @@ public class Produto {
 		this.validade = validade;
 	}
 
-	public Notafiscal getNotafiscal() {
-		return notafiscal;
+	public int getIdLoja() {
+		return idLoja;
 	}
 
-	public void setNotafiscal(Notafiscal notafiscal) {
-		this.notafiscal = notafiscal;
-	}	
+	public void setIdLoja(int idLoja) {
+		this.idLoja = idLoja;
+	}
 
+	public int getNf() {
+		return nf;
+	}
+
+	public void setNf(int nf) {
+		this.nf = nf;
+	}
+
+	
+	
 }
