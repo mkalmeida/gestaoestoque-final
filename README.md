@@ -25,9 +25,9 @@
 ![image](https://github.com/mkalmeida/gestaoestoque-final/assets/130864403/869f3d27-aad5-4dd6-85da-e4e298e42492)
 ![image](https://github.com/mkalmeida/gestaoestoque-final/assets/130864403/6f8c0079-e50d-4eff-b147-b0aa96cbf848)
 
-⭐ CRUD funciona com as opções de inserir informações (POST) no sistema e ver os dados de Lojas (GET), Notas Fiscais e Produtos. O sistema permite buscar lojas por ID. 
+⭐ CRUD funciona com as opções de inserir informações (POST) no sistema e ver os dados de Lojas, Notas Fiscais e Produtos (GET). O sistema também permite buscar lojas por ID. 
 
-⭐ Além disso, também é possível alterar produtos (PUT), deleta-los (DEL), buscar por ID e realizar a pesquisa por validade inserindo "mês/ano" ou "dia/mês/ano". A pesquisa por validade retorna todas as validades que contém os dados inseridos.
+⭐ Além disso, também é possível alterar produtos (PUT), deleta-los (DEL), buscar por ID e realizar a pesquisa por validade inserindo "mês/ano" ou "dia/mês/ano". A pesquisa por validade retorna todos os produtos que contém validade no período inserido.
  
 Esse projeto foi parte do escopo da trilha de java Bees Afro Pretas.
   
