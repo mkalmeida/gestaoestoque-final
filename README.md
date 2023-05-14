@@ -3,7 +3,8 @@
 
 ### Boas vindas! 😊
 
-⭐ O projeto CheckStock permite a visualização de produtos que atingirão a data de validade até o período escolhido, possibilitando o estabelecimento a traçar estratégias de negócio que permitam a distribuição adequada do produto em tempo hábil. De forma a permitir a diminuição de perdas, rupturas e consequente aumento de lucros.
+  
+⭐ O projeto CheckStock permite a visualização de produtos que atingirão a data de validade até o período escolhido, possibilitando o estabelecimento a traçar **\_estratégias de negócio\_**  que permitam a distribuição adequada do produto em tempo hábil. De forma a permitir a \_**diminuição de perdas, rupturas e consequente aumento de lucros**\_.
 
 <div align="center">
   <img src = "https://github.com/mkalmeida/gestaoestoque-final/assets/130864403/0ab6836f-064d-493a-b39d-6282b216dd1a"
@@ -24,7 +25,7 @@
 ![image](https://github.com/mkalmeida/gestaoestoque-final/assets/130864403/869f3d27-aad5-4dd6-85da-e4e298e42492)
 ![image](https://github.com/mkalmeida/gestaoestoque-final/assets/130864403/6f8c0079-e50d-4eff-b147-b0aa96cbf848)
 
-⭐ CRUD funciona com as opções de inserir (POST) informações no sistema e ver os dados (GET) de Lojas, Notas Fiscais e Produtos. O sistema permite buscar lojas por ID. 
+⭐ CRUD funciona com as opções de inserir informações (POST) no sistema e ver os dados de Lojas (GET), Notas Fiscais e Produtos. O sistema permite buscar lojas por ID. 
 
 ⭐ Além disso, também é possível alterar produtos (PUT), deleta-los (DEL), buscar por ID e realizar a pesquisa por validade inserindo "mês/ano" ou "dia/mês/ano". A pesquisa por validade retorna todas as validades que contém os dados inseridos.
  
